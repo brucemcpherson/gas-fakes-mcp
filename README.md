@@ -2,6 +2,10 @@
 
 This project is an experiment to use [`@mcpher/gas-fakes`](https://github.com/brucemcpherson/gas-fakes) as a server, integrated with Google Cloud services and the Gemini CLI.
 
+## Source
+
+This repo is based on this [post](https://medium.com/google-cloud/secure-and-conversational-google-workspace-automation-integrating-gemini-cli-with-a-gas-fakes-mcp-0a5341559865) [by Kanshi Tanaike](https://medium.com/@tanaike?source=post_page---byline--0a5341559865---------------------------------------), who created the concept of using [gas-fakes](https://github.com/brucemcpherson/gas-fakes) as a sandbox to develop and test Apps Script locally on Node.
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
