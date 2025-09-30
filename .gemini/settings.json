@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gas-fakes": {
+      "command": "node",
+      "args": ["./mcp/gas-fakes-mcp.js"]
+    }
+  }
+}
