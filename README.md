@@ -40,7 +40,8 @@ npm install -g @google/gemini-cli
 
 ### 3. Create the `.env` Configuration File
 
-This project uses a `.env` file in the root directory to manage environment variables. Create a file named `.env` and add the following content, replacing the placeholder with your Google Cloud Project ID.
+This project uses a `.env` file in the root directory to manage environment variables. Create a file named `.env` and add the following content, replacing the placeholder with your Google Cloud Project ID. Note that you need to use a Google Cloud Project for both gas-fakes and the Gemini CLI, so enable the Drive and Spreadsheet APIs up there. Assuming you've already used Gemini you'll probably already have one you can use for this.
+
 
 ```env
 # Your Google Cloud Project ID
