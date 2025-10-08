@@ -1,3 +1,4 @@
+
 import '@mcpher/gas-fakes';
 
 function testSetup() {
@@ -5,31 +6,26 @@ function testSetup() {
   ScriptApp.__behavior.sandboxMode = true;
 
   const docName = '--gas-fakes-test';
-  let doc;
-  try {
-    // create a new document
-    doc = DocumentApp.create(docName);
-    const body = doc.getBody();
+  const docText = 'coffee turns potential into momentum.';
 
-    // append a paragraph
-    const textToAppend = 'coffee turns potential into momentum.';
-    body.appendParagraph(textToAppend);
-    doc.saveAndClose();
+  // create a new document
+  const doc = DocumentApp.create(docName);
+  doc.getBody().appendParagraph(docText);
+  doc.saveAndClose();
 
-    // read the document text and ensure it matches
-    const doc2 = DocumentApp.openById(doc.getId());
-    const docText = doc2.getBody().getText();
+  // read the document text and ensure it matches what you created
+  const readDoc = DocumentApp.openById(doc.getId());
+  const readText = readDoc.getBody().getText();
 
-    if (docText.trim() !== textToAppend) {
-      console.log(`Verification failed. Expected: "${textToAppend}", but got: "${docText.trim()}"`);
-    } else {
-      console.log('Verification successful!');
-    }
-  } finally {
-    // tidy up sandbox
-    ScriptApp.__behavior.trash();
-    console.log('Sandbox cleaned up.');
+  if (readText.trim() !== docText) {
+    throw new Error(`Expected "${docText}", but got "${readText.trim()}"`);
   }
+  console.log('Successfully created and verified document content.');
+
+
+  // tidy up sandbox
+  ScriptApp.__behavior.trash();
+  console.log('Sandbox tidied up.');
 }
 
 testSetup();

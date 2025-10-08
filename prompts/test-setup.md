@@ -1,4 +1,4 @@
-This script is to ensure that authentication for apps script is properly set up. 
+This script is to ensure that authentication for apps script is properly set up. For this example, bypass any MCP servers. 
 
 ## General rules
 - Put any generated scripts into ./gemini-created-scripts, and give them the same filename as the prompt file filename
@@ -8,7 +8,8 @@ This script is to ensure that authentication for apps script is properly set up.
 - sandbox mode is enabled with ScriptApp.__behavior.sandboxMode = true
 - sandbox cleanup happens with ScriptApp.__behavior.trash()
 
-## Create a test Google Apps Script to ensure gas-fakes is operating successfully
+## Create a gas-fakes Google Apps Script to ensure gas-fakes is operating successfully
+- import '@mcpher/gas-fakes'
 - enable sandbox mode
 - create a new document called '--gas-fakes-test'
 - append a paragraph with the text 'coffee turns potential into momentum.'
